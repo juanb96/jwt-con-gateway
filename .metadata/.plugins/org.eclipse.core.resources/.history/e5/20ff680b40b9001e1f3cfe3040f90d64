@@ -1,0 +1,5 @@
+package com.service.pedidos.impl;
+
+public interface PedidosImpl {
+
+}

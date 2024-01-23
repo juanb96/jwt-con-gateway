@@ -1,0 +1,5 @@
+package com.service.pedidos.client;
+
+public class RestauranteServiceClient {
+
+}

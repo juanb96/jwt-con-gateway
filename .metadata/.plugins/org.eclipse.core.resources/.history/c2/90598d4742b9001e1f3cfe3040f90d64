@@ -1,0 +1,20 @@
+package com.service.pedidos.impl;
+
+import com.service.pedidos.client.RestauranteServiceClient;
+import com.service.pedidos.dto.OrdenRespDTO;
+
+public class PedidosService implements PedidosImpl{
+
+	@Override
+	public String saludo() {
+		
+		return "Bienvenido al servicio de pedidos";
+	}
+
+	@Override
+	public OrdenRespDTO verificarEstadoOrden(String ordenId) {
+		// TODO Auto-generated method stub
+		return RestauranteServiceClient.fetchOrderStatus(ordenId);
+	}
+
+}

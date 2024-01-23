@@ -1,0 +1,31 @@
+spring:
+ cloud:
+   gateway:
+     routes:
+       - id: pedidos-app
+         uri: lb://PEDIDOS-APP
+         predicates:
+           - Path=/pedidos/**
+         filters:
+           - AuthenticationFilter
+
+
+       - id: restaurante-service
+         uri: lb://RESTAURANTE-SERVICE
+         predicates:
+           - Path=/restaurante/**
+         filters:
+           - AuthenticationFilter
+
+       - id: autenticacion-service
+         uri: lb://AUTENTICACION-SERVICE
+         predicates:
+           - Path=/auth/**
+
+ application:
+   name: SERVICIO-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/

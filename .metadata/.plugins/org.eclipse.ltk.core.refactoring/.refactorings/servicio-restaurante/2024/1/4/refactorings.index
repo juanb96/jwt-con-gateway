@@ -1,0 +1,14 @@
+1705960803289	Rename type 'OrdenResp'
+1705961413555	Delete element
+1705961651451	Delete element
+1705962548154	Delete element
+1705962551557	Delete element
+1705962600826	Rename type 'RestauranteDAO'
+1705962860797	Rename package 'com.service.restaurante.DAO'
+1705963235154	Delete element
+1705963568648	Delete element
+1705963760043	Delete element
+1705964225503	Copy package
+1705964241730	Copy compilation unit
+1705979317576	Rename field 'service'
+1705979441545	Rename local variable 'orderId'

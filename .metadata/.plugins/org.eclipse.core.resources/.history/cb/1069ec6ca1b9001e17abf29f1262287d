@@ -1,0 +1,24 @@
+package com.service.restaurante.dto;
+
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class OrdenRespDTO {
+
+	private String idPedido;
+	private String nombre;
+	private int cantidad;
+	private double precio;
+	private Date fechaPedido;
+	private String estado;
+	private int ventanaEntregaEstimada;
+
+
+
+}

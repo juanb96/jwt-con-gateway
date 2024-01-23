@@ -1,0 +1,24 @@
+package com.service.autenticacion.config;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
+import com.service.autenticacion.entity.Usuario;
+import com.service.autenticacion.repository.UsuarioRepository;
+
+@Component
+public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService{
+
+	@Autowired
+	private UsuarioRepository usuariorepo;
+	
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		 Optional<Usuario> credential = usuariorepo.findByEmail(email);
+	        return credential.map(CustomUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("user not found with name :" + email));
+	}
+
+}
